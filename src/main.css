@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;500;700;900&display=swap');
+
+:root {
+  --white: #fff;
+  --black: #000;
+  --font-family: 'Raleway', sans-serif;
+  --blue: #2b59ff;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* start landing section */
+.landing {
+  height: 100dvh;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  align-items: center;
+}
+
+.landing-content > *:nth-child(1) {
+  display: grid;
+  gap: 15px;
+  justify-items: flex-start;
+}
+
+.landing .bg {
+  height: 1000px;
+  position: absolute;
+  top: -100px;
+  left: 48%;
+  z-index: -1;
+}
+.landing .bg img {
+  height: 100%;
+}
+
+.landing .mantine-Title-root > * {
+  width: fit-content;
+  display: inline;
+}
+.landing .mantine-Title-root {
+  font-size: 70px;
+}
+
+.landing .mantine-Title-root + .mantine-Text-root {
+  font-size: 24px;
+  padding-right: 100px;
+}
+/* modal styling */
+.mantine-Modal-title {
+  font-family: var(--font-family);
+  font-size: 25px;
+}
+
+
+
+/* test */

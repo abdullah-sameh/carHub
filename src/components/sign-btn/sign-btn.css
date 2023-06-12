@@ -1,0 +1,72 @@
+button.signBtn {
+  font-family: var(--font-family);
+  font-size: 20px;
+  font-weight: bold;
+  background: linear-gradient(to bottom, #0f1923 0%, #0c2d5c 100%);
+  color: white;
+  padding: 0.8em 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+}
+
+button.signBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+  padding: 0em;
+  background: linear-gradient(to bottom, #0f1923 0%, #0c2d5c 100%);
+  cursor: pointer;
+}
+
+button.signBtn:active {
+  transform: scale(0.95);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button.signBtn span {
+  display: block;
+  margin-left: 0.4em;
+  transition: all 0.3s;
+}
+
+button.signBtn:hover span {
+  scale: 0;
+  font-size: 0%;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+button.signBtn svg {
+  width: 18px;
+  height: 18px;
+  fill: white !important;
+  transition: all 0.3s;
+}
+
+button.signBtn .svg-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: all 0.3s;
+}
+
+button.signBtn:hover .svg-wrapper {
+  background-color: #0f1923;
+  width: 54px;
+  height: 54px;
+}
+
+button.signBtn:hover svg {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+  transform: rotate(45deg);
+}
