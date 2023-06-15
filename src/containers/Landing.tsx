@@ -1,6 +1,5 @@
 import Typewriter from 'typewriter-effect'
 import { Box, Container, Image, SimpleGrid, Text, Title } from '@mantine/core'
-import Nav from '../components/Nav'
 import bg from '../../public/hero-bg.png'
 import hero from '../../public/hero.png'
 import Btn from '../components/btn/Btn'
@@ -8,7 +7,6 @@ import Btn from '../components/btn/Btn'
 export default function Landing() {
   return (
     <Box h={'100dvh'} className='landing'>
-      <Nav />
       <Container size={'xl'}>
         <SimpleGrid className='landing-content' cols={2}>
           <Box className='animate__animated animate__fadeIn'>
