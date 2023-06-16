@@ -17,15 +17,13 @@ import { motion, useAnimate, useInView } from 'framer-motion'
 
 type CarCardProps = {
   car: arrProps
-  w: number
+  // w: number
   price: number
 }
 
 export default function CarCard(props: CarCardProps) {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { car, w, price } = props
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [imgs, setImages] = useState<string[] | undefined>(undefined)
+  const { car, price } = props
+  const [imgs] = useState<string[] | undefined>(undefined)
   const { hovered, ref } = useHover()
   const [opened, { open, close }] = useDisclosure(false)
   const [scope, animate] = useAnimate()

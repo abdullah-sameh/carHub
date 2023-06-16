@@ -90,6 +90,7 @@ export default function Catalogue() {
         {showData.map((card, i) => {
           return (
             <motion.div
+              key={i}
               initial={{ y: 100, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: false, margin: '-50px 0px' }}
@@ -97,7 +98,7 @@ export default function Catalogue() {
             >
               <CarCard
                 car={card}
-                w={i}
+                // w={i}
                 price={Math.floor(Math.random() * 11) + 50}
               />
             </motion.div>
