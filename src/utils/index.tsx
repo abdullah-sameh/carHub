@@ -1,4 +1,4 @@
-type arrProps = {
+export type arrProps = {
   city_mpg: number
   class: string
   combination_mpg: number
@@ -46,6 +46,20 @@ export const getImages = (
   //     })
   //     .catch(err => reject(err))
   // })
+}
+
+export function paginateArray<T>(array: T[], pageSize: number): T[][] {
+  const pageCount = Math.ceil(array.length / pageSize)
+  const paginatedArray: T[][] = []
+
+  for (let i = 0; i < pageCount; i++) {
+    const startIndex = i * pageSize
+    const endIndex = startIndex + pageSize
+    const page = array.slice(startIndex, endIndex)
+    paginatedArray.push(page)
+  }
+
+  return paginatedArray
 }
 
 export const gasCars = [

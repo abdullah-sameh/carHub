@@ -1,4 +1,4 @@
-import { Anchor, Box, Container, Flex, Text, Title } from '@mantine/core'
+import { Anchor, Container, Flex, Text } from '@mantine/core'
 import Nav from './components/Nav'
 import ToTop from './components/ToTop'
 import Catalogue from './containers/Catalogue'

@@ -1,5 +1,13 @@
 import Typewriter from 'typewriter-effect'
-import { Box, Container, Image, SimpleGrid, Text, Title } from '@mantine/core'
+import {
+  Box,
+  Container,
+  Image,
+  MediaQuery,
+  SimpleGrid,
+  Text,
+  Title,
+} from '@mantine/core'
 import bg from '../../public/hero-bg.png'
 import hero from '../../public/hero.png'
 import Btn from '../components/btn/Btn'
@@ -27,9 +35,11 @@ export default function Landing() {
             </Text>
             <Btn txt='explore' />
           </Box>
-          <Box>
-            <Image src={hero} className='animate__animated animate__bounce' />
-          </Box>
+          <MediaQuery smallerThan={800} styles={{ display: 'none' }}>
+            <Box>
+              <Image src={hero} className='animate__animated animate__bounce' />
+            </Box>
+          </MediaQuery>
         </SimpleGrid>
       </Container>
       <div className='bg'>

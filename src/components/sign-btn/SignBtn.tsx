@@ -1,5 +1,6 @@
 import { MouseEventHandler } from 'react'
 import './sign-btn.css'
+import { MediaQuery } from '@mantine/core'
 
 type SignBtnProps = {
   open: MouseEventHandler<HTMLButtonElement>
@@ -23,7 +24,9 @@ export default function SignBtn(props: SignBtnProps) {
           </svg>
         </div>
       </div>
-      <span>Sign in</span>
+      <MediaQuery smallerThan={800} styles={{ display: 'none !important' }}>
+        <span>Sign in</span>
+      </MediaQuery>
     </button>
   )
 }

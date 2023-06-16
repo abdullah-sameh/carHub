@@ -12,19 +12,23 @@ import {
   Pagination,
 } from '@mantine/core'
 import CarCard from '../components/CarCard'
-import { deislCars, electricityCars, gasCars } from '../utils'
+import { deislCars, electricityCars, gasCars, paginateArray } from '../utils'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 
 export default function Catalogue() {
-  const [showedCars, setShowedCar] = useState(deislCars)
+  const carInPage = 10
+  const [showedCars, setShowedCar] = useState(
+    paginateArray(deislCars, carInPage)
+  )
+  const [showData, setShowData] = useState(showedCars[0])
 
   return (
     <Container className='catalogue' size='xl'>
       <motion.div
         initial={{ y: 200, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
-        viewport={{ once: false, margin: '-200px' }}
+        viewport={{ once: false }}
       >
         <Box className='head'>
           <Title id='catalogue'>Car Catalogue</Title>
@@ -55,9 +59,12 @@ export default function Catalogue() {
               ]}
               onChange={value => {
                 console.log(value)
-                if (value === 'Fuel') setShowedCar(deislCars)
-                else if (value === 'Gas') setShowedCar(gasCars)
-                else if (value === 'Electricity') setShowedCar(electricityCars)
+                if (value === 'Fuel')
+                  setShowedCar(paginateArray(deislCars, carInPage))
+                else if (value === 'Gas')
+                  setShowedCar(paginateArray(gasCars, carInPage))
+                else if (value === 'Electricity')
+                  setShowedCar(paginateArray(electricityCars, carInPage))
               }}
             />
             <Select
@@ -80,25 +87,33 @@ export default function Catalogue() {
         </Flex>
       </motion.div>
       <Box className='cards'>
-        {showedCars.map((card, i) => {
-          return i > 10 ? null : (
+        {showData.map((card, i) => {
+          return (
             <motion.div
               initial={{ y: 100, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: false, margin: '-50px 0px' }}
+              style={{ width: '100%' }}
             >
               <CarCard
-                carName={`${card?.make} ${card?.model}`}
-                carYear={`${card.year}`}
-                drive={card?.drive}
+                car={card}
                 w={i}
-                cityMPG={card?.city_mpg}
+                price={Math.floor(Math.random() * 11) + 50}
               />
             </motion.div>
           )
         })}
       </Box>
-      <Pagination mt={30} total={20} position='center' size='md' />
+      <Pagination
+        mt={30}
+        total={showedCars.length}
+        position='center'
+        size='md'
+        onChange={e => {
+          setShowData(showedCars[e - 1])
+          console.log(e - 1)
+        }}
+      />
     </Container>
   )
 }
