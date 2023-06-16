@@ -2,7 +2,6 @@ import {
   Anchor,
   Card,
   Container,
-  Flex,
   Image,
   SimpleGrid,
   Text,

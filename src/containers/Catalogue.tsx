@@ -26,9 +26,9 @@ export default function Catalogue() {
   return (
     <Container className='catalogue' size='xl'>
       <motion.div
-        initial={{ y: 200, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        viewport={{ once: false }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: false, margin: '-150px' }}
       >
         <Box className='head'>
           <Title id='catalogue'>Car Catalogue</Title>
@@ -110,8 +110,8 @@ export default function Catalogue() {
         position='center'
         size='md'
         onChange={e => {
+          window.location.href = '#catalogue'
           setShowData(showedCars[e - 1])
-          console.log(e - 1)
         }}
       />
     </Container>

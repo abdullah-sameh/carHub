@@ -1,5 +1,5 @@
 import { useWindowScroll } from '@mantine/hooks'
-import { Affix, Button, Transition, rem } from '@mantine/core'
+import { Affix, Button, MediaQuery, Text, Transition, rem } from '@mantine/core'
 import { UilAngleDoubleUp } from '@iconscout/react-unicons'
 
 export default function ToTop() {
@@ -10,12 +10,14 @@ export default function ToTop() {
       <Transition transition='slide-up' mounted={scroll.y > 0}>
         {transitionStyles => (
           <Button
-            leftIcon={<UilAngleDoubleUp  />}
+            leftIcon={<UilAngleDoubleUp />}
             style={transitionStyles}
             onClick={() => scrollTo({ y: 0 })}
             color='brand.8'
           >
-            Scroll to top
+            <MediaQuery smallerThan={500} styles={{ display: 'none' }}>
+              <Text>Scroll to top</Text>
+            </MediaQuery>
           </Button>
         )}
       </Transition>

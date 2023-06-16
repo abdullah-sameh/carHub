@@ -30,22 +30,22 @@ export const getImages = (
     },
   }
 
-  // return new Promise<string[]>((resolve, reject) => {
-  //   fetch(url, request_params)
-  //     .then(resp => {
-  //       resp
-  //         .json()
-  //         .then(data => {
-  //           const imgResults = data.value
-  //           const imgUrls = imgResults.map(
-  //             (img: { contentUrl: string }) => img.contentUrl
-  //           )
-  //           resolve(imgUrls)
-  //         })
-  //         .catch(error => reject(error))
-  //     })
-  //     .catch(err => reject(err))
-  // })
+  return new Promise<string[]>((resolve, reject) => {
+    fetch(url, request_params)
+      .then(resp => {
+        resp
+          .json()
+          .then(data => {
+            const imgResults = data.value
+            const imgUrls = imgResults.map(
+              (img: { contentUrl: string }) => img.contentUrl
+            )
+            resolve(imgUrls)
+          })
+          .catch(error => reject(error))
+      })
+      .catch(err => reject(err))
+  })
 }
 
 export function paginateArray<T>(array: T[], pageSize: number): T[][] {

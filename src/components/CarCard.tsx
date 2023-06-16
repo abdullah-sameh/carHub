@@ -13,7 +13,7 @@ import {
 import { useEffect, useState } from 'react'
 import { arrProps, getImages } from '../utils'
 import { useDisclosure, useHover } from '@mantine/hooks'
-import { motion } from 'framer-motion'
+import { motion, useAnimate, useInView } from 'framer-motion'
 
 type CarCardProps = {
   car: arrProps
@@ -26,8 +26,10 @@ export default function CarCard(props: CarCardProps) {
   const [imgs, setImages] = useState<string[] | undefined>(undefined)
   const { hovered, ref } = useHover()
   const [opened, { open, close }] = useDisclosure(false)
+  const [scope, animate] = useAnimate()
 
   const carName = `${car?.make} ${car?.model}`
+  const isInView = useInView(scope)
 
   useEffect(() => {
     setTimeout(() => {
@@ -39,7 +41,16 @@ export default function CarCard(props: CarCardProps) {
           console.error(error)
         })
     }, 100 * w)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
+  useEffect(() => {
+    console.log(isInView)
+    setTimeout(() => {
+      animate('li', { y: [-100, 0], opacity: [0, 1] })
+    }, 10)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isInView])
 
   return (
     <Card
@@ -103,7 +114,9 @@ export default function CarCard(props: CarCardProps) {
         className='card-modal'
         opened={opened}
         onClose={close}
+        closeButtonProps={{ variant: 'filled', color: 'brand' }}
         zIndex={99999}
+        lockScroll={false}
       >
         <Box className='imgs'>
           <Image width='100%' height={150} radius='md' />
@@ -112,14 +125,18 @@ export default function CarCard(props: CarCardProps) {
           <Image width='100%' height={100} radius='md' />
         </Box>
         <Title order={3}>{carName}</Title>
-        {Object.entries(car).map(([key, value]) => (
-          <Flex key={key} justify='space-between'>
-            <Text transform='capitalize' color='dimmed'>
-              {key.replace('_', ' ')}
-            </Text>
-            <Text transform='capitalize'>{value}</Text>
-          </Flex>
-        ))}
+        <ul ref={scope}>
+          {Object.entries(car).map(([key, value]) => (
+            <li key={key}>
+              <Flex justify='space-between'>
+                <Text transform='capitalize' color='dimmed'>
+                  {key.replace('_', ' ')}
+                </Text>
+                <Text transform='capitalize'>{value}</Text>
+              </Flex>
+            </li>
+          ))}
+        </ul>
       </Modal>
     </Card>
   )

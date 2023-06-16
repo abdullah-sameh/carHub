@@ -180,3 +180,7 @@ ul,
 li {
   all: initial;
 }
+ul {
+  display: grid;
+  gap: 10px;
+}
