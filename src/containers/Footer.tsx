@@ -7,7 +7,7 @@ import {
   Text,
   Title,
 } from '@mantine/core'
-import logo from '../../public/logo.svg'
+import logo from '../assets/logo.svg'
 import { useAnimate, useInView } from 'framer-motion'
 import { useEffect } from 'react'
 

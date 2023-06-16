@@ -8,8 +8,8 @@ import {
   Text,
   Title,
 } from '@mantine/core'
-import bg from '../../public/hero-bg.png'
-import hero from '../../public/hero.png'
+import bg from '../assets/hero-bg.png'
+import hero from '../assets/hero.png'
 import Btn from '../components/btn/Btn'
 
 export default function Landing() {
