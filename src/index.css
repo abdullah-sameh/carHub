@@ -53,6 +53,12 @@ html {
   font-size: 70px;
 }
 
+@media (max-width: 500px) {
+  .landing .mantine-Title-root {
+    font-size: 60px;
+  }
+}
+
 .landing .mantine-Title-root + .mantine-Text-root {
   font-size: 24px;
   padding-right: 100px;
