@@ -1,4 +1,3 @@
-import { UilCog, UilPump, UilStreering } from '@iconscout/react-unicons'
 import {
   Box,
   Button,
@@ -11,9 +10,10 @@ import {
   Title,
 } from '@mantine/core'
 import { useEffect, useState } from 'react'
-import { arrProps } from '../utils'
+import { arrProps } from './utils'
 import { useDisclosure, useHover } from '@mantine/hooks'
 import { motion, useAnimate, useInView } from 'framer-motion'
+import { FaGasPump, FaPeace, FaWrench } from 'react-icons/fa'
 
 type CarCardProps = {
   car: arrProps
@@ -30,19 +30,6 @@ export default function CarCard(props: CarCardProps) {
 
   const carName = `${car?.make} ${car?.model}`
   const isInView = useInView(scope)
-
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     getImages(carName, car?.year.toString())
-  //       .then(imageUrls => {
-  //         setImages(imageUrls)
-  //       })
-  //       .catch(error => {
-  //         console.error(error)
-  //       })
-  //   }, 100 * w)
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [])
 
   useEffect(() => {
     console.log(isInView)
@@ -94,15 +81,18 @@ export default function CarCard(props: CarCardProps) {
               }}
             >
               <SimpleGrid>
-                <UilStreering color='var(--mantine-color-violet-9)' />
+                <FaPeace />
+                {/* <UilStreering color='var(--mantine-color-violet-9)' /> */}
                 <Text>Automatic</Text>
               </SimpleGrid>
               <SimpleGrid>
-                <UilCog color='var(--mantine-color-orange-9)' />
+                {/* <UilCog color='var(--mantine-color-orange-9)' /> */}
+                <FaWrench />
                 <Text>{car?.drive}</Text>
               </SimpleGrid>
               <SimpleGrid>
-                <UilPump color='var(--mantine-color-lime-8)' />
+                {/* <UilPump color='var(--mantine-color-lime-8)' /> */}
+                <FaGasPump />
                 <Text>{car?.city_mpg} MPG</Text>
               </SimpleGrid>
             </Flex>

@@ -13,48 +13,6 @@ export type arrProps = {
   displacement?: number
 }
 
-// export const getImages = (
-//   carName: string,
-//   carYear: string
-// ): Promise<string[]> => {
-//   const subscriptionKey = 'fee8f8c02e73400cad141b89e8c6a612'
-//   const host = 'https://api.bing.microsoft.com/v7.0/images/search'
-//   const term = `${carName} ${carYear}`
-//   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-//   const url = `${host}?q=${encodeURIComponent(
-//     term
-//   )}&count=4&aspect=Wide&imageType=Transparent`
-//   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-//   const request_params = {
-//     headers: {
-//       'Ocp-Apim-Subscription-Key': subscriptionKey,
-//       'User-agent': 'your bot 0.1',
-//     },
-//   }
-
-//   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-//   return new Promise<string[]>((resolve, reject) => {
-//     console.log('hey by')
-//   })
-
-//   // return new Promise<string[]>((resolve, reject) => {
-//   //   fetch(url, request_params)
-//   //     .then(resp => {
-//   //       resp
-//   //         .json()
-//   //         .then(data => {
-//   //           const imgResults = data.value
-//   //           const imgUrls = imgResults.map(
-//   //             (img: { contentUrl: string }) => img.contentUrl
-//   //           )
-//   //           resolve(imgUrls)
-//   //         })
-//   //         .catch(error => reject(error))
-//   //     })
-//   //     .catch(err => reject(err))
-//   // })
-// }
-
 export function paginateArray<T>(array: T[], pageSize: number): T[][] {
   const pageCount = Math.ceil(array.length / pageSize)
   const paginatedArray: T[][] = []

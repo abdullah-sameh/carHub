@@ -11,7 +11,7 @@ import {
 } from '@mantine/core'
 import SignBtn from './sign-btn/SignBtn'
 import { useDisclosure, useWindowScroll } from '@mantine/hooks'
-import MyTextInput from '../components/input/MyTextInput'
+import MyTextInput from './input/MyTextInput'
 import { useEffect, useState } from 'react'
 
 export default function Nav() {

@@ -1,4 +1,3 @@
-import { UilCar, UilSearch, UilWordpress } from '@iconscout/react-unicons'
 import {
   Container,
   Title,
@@ -12,9 +11,15 @@ import {
   Pagination,
 } from '@mantine/core'
 import CarCard from '../components/CarCard'
-import { deislCars, electricityCars, gasCars, paginateArray } from '../utils'
+import {
+  deislCars,
+  electricityCars,
+  gasCars,
+  paginateArray,
+} from '../components/utils'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { FaCar, FaSearch, FaWordpress } from 'react-icons/fa'
 
 export default function Catalogue() {
   const carInPage = 10
@@ -41,11 +46,11 @@ export default function Catalogue() {
           className='catalogue-nav'
         >
           <Flex gap={10} wrap='wrap' align={'center'}>
-            <TextInput placeholder='Volkswagen...' icon={<UilWordpress />} />
-            <TextInput placeholder='Tiguan...' icon={<UilCar />} />
+            <TextInput placeholder='Volkswagen...' icon={<FaWordpress />} />
+            <TextInput placeholder='Tiguan...' icon={<FaCar />} />
             <MediaQuery smallerThan='sm' styles={{ display: 'none' }}>
               <Button size='sm'>
-                <UilSearch />
+                <FaSearch />
               </Button>
             </MediaQuery>
           </Flex>

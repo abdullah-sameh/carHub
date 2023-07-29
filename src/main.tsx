@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
-import './main.css'
+import './index.css'
 import 'animate.css'
 import { MantineProvider } from '@mantine/core'
 
