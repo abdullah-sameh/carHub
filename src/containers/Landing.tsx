@@ -8,8 +8,8 @@ import {
   Text,
   Title,
 } from '@mantine/core'
-import bg from '../assets/hero-bg.png'
-import hero from '../assets/hero.png'
+import bg from '../assets/hero-bg.webp'
+import hero from '../assets/hero.webp'
 import Btn from '../components/btn/Btn'
 
 export default function Landing() {
@@ -19,14 +19,16 @@ export default function Landing() {
         <SimpleGrid className='landing-content' cols={2}>
           <Box className='animate__animated animate__fadeIn'>
             <Title>
-              <Typewriter
-                options={{
-                  strings: ['Find', 'Book', 'Rent'],
-                  autoStart: true,
-                  loop: true,
-                  wrapperClassName: 'inner-typper',
-                }}
-              />{' '}
+              <span style={{ color: 'var(--blue)', display: 'inline-block' }}>
+                <Typewriter
+                  options={{
+                    strings: ['Find', 'Book', 'Rent'],
+                    autoStart: true,
+                    loop: true,
+                    wrapperClassName: 'inner-typper',
+                  }}
+                />
+              </span>{' '}
               a car—quick and super easy!
             </Title>
             <Text>

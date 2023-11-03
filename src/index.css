@@ -55,7 +55,7 @@ html {
 
 @media (max-width: 500px) {
   .landing .mantine-Title-root {
-    font-size: 60px;
+    font-size: 50px;
   }
 }
 
@@ -163,16 +163,16 @@ html {
 }
 
 .card-modal .imgs > *:first-child .mantine-Image-imageWrapper {
-  background-image: url('../public/pattern.png');
+  background-image: url('../public/pattern.webp');
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 10px;
 }
-.card-modal .imgs {
+/* .card-modal .imgs {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 10px;
-}
+} */
 .card-modal .imgs *:first-child {
   grid-column: 1/4;
 }

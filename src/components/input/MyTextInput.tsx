@@ -16,7 +16,13 @@ export default function MyTextInput(props: inputProps) {
         } as React.CSSProperties
       }
     >
-      <input required type={type} className='input' placeholder=' ' />
+      <input
+        required
+        type={type}
+        className='input'
+        autoComplete='none'
+        placeholder=' '
+      />
       <span className='bar'></span>
       <label className='label'>
         {[...label].map((letter, i) => (
