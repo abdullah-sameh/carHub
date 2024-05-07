@@ -1,5 +1,3 @@
-# carHub
+#Using FramerMotion with React.
 
-it's my version for this website:
-
-> https://carhub-two.vercel.app/
+> the website is responsible for the visual presentation, user interaction, and responsiveness that delivers the core functionalities and information to the user.
